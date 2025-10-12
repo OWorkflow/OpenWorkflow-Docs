@@ -26,8 +26,17 @@ interface FrontMatter {
 async function getSpecDirectory(): Promise<string> {
   // First, check if GitHub Actions checked out the spec (highest priority for CI)
   if (await fs.pathExists(GITHUB_ACTIONS_SPEC_DIR)) {
-    console.log('📥 Using GitHub Actions checked-out specification (.spec-source)');
-    return GITHUB_ACTIONS_SPEC_DIR;
+    // Check if it's actually the spec repo or if it contains the spec repo
+    const specsPath = path.join(GITHUB_ACTIONS_SPEC_DIR, 'specs');
+    const nestedSpecPath = path.join(GITHUB_ACTIONS_SPEC_DIR, 'OpenWorkflow-Specification');
+
+    if (await fs.pathExists(specsPath)) {
+      console.log('📥 Using GitHub Actions checked-out specification (.spec-source)');
+      return GITHUB_ACTIONS_SPEC_DIR;
+    } else if (await fs.pathExists(nestedSpecPath)) {
+      console.log('📥 Using nested specification directory (.spec-source/OpenWorkflow-Specification)');
+      return nestedSpecPath;
+    }
   }
 
   // Second, check if the local specification directory exists (for local dev)
