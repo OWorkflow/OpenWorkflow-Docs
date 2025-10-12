@@ -27,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Reference Implementation callout in README
 - Status headers to all specification files
 - Template Context Model section in workflow-schema.md
-- Design Principles section in workflow-logic-nodes.md (Determinism & Observability)
+- Design Principles section in workflow-logic-steps.md (Determinism & Observability)
 - Backend Overrides section in workflow-schema.md
 - Security and capability hints in connector-schema.md
 - Authentication section with vendor-neutral descriptors in connector-schema.md

@@ -37,7 +37,7 @@ const sidebars: SidebarsConfig = {
         'reference/connector-schema',
         'reference/workflow-schema',
         'reference/agent-schema',
-        'reference/workflow-logic-nodes',
+        'reference/workflow-logic-steps',
         'reference/execution-backends',
         'reference/execution-modes',
         'reference/security',

@@ -64,7 +64,7 @@ For the Smartify Runtime implementation, see: *(link to be added when repository
 This specification defines:
 
 - **Schemas** for connectors, agents, workflows, and bundles
-- **Logic node catalog** with portable semantics (conditionals, loops, error handling, transforms)
+- **Logic step catalog** with portable semantics (conditionals, loops, error handling, transforms)
 - **Naming and versioning** conventions for registry resources
 - **Security primitives** (authentication, authorization, secrets management, template sandboxing)
 - **Registry protocol** for discovery, publishing, and dependency resolution
@@ -227,7 +227,7 @@ Smartify Runtime supports pluggable execution backends for maximum flexibility:
 - [Registry Taxonomy](./reference/registry-taxonomy.md) - Resource types, naming, and manifest formats
 - [Connector Schema](./reference/connector-schema.md) - Capability provider definition
 - [Workflow Schema](./reference/workflow-schema.md) - DAG composition and orchestration
-- [Workflow Logic Nodes](./reference/workflow-logic-nodes.md) - Control flow, loops, branching, error handling
+- [Workflow Logic Steps](./reference/workflow-logic-steps.md) - Control flow, loops, branching, error handling
 - [Agent Schema](./reference/agent-schema.md) - AI agent configuration
 - [SDK Contract](./reference/sdk-contract.md) - Language-agnostic integration
 - [**Security**](./reference/security.md) - Authentication, secrets, RBAC, and security best practices

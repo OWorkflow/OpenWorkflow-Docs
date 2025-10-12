@@ -247,7 +247,7 @@ Browse the specification documentation:
 - [Workflow Schema](./workflow-schema.md)
 - [Agent Schema](./agent-schema.md)
 - [Bundle Schema](./bundle-schema.md)
-- [Workflow Logic Nodes](./workflow-logic-nodes.md)
+- [Workflow Logic Steps](./workflow-logic-steps.md)
 - [Execution Backends](./execution-backends.md)
 - [Registry Protocol](./registry-protocol.md)
 - [SDK Contract](./sdk-contract.md)
