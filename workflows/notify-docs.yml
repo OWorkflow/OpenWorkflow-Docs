@@ -1,0 +1,25 @@
+name: Notify Docs Site
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'specs/**'
+      - 'examples/**'
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - 'CHANGELOG.md'
+
+jobs:
+  trigger-docs-build:
+    name: Trigger Documentation Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger OpenWorkflow-Docs deployment
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.DOCS_DEPLOY_TOKEN }}" \
+            https://api.github.com/repos/Open-Workflow/OpenWorkflow-Docs/dispatches \
+            -d '{"event_type":"spec-updated"}'
