@@ -6,8 +6,13 @@ import path from 'path';
 import matter from 'gray-matter';
 
 const SPEC_REPO = 'https://github.com/Open-Workflow/OpenWorkflow-Specification.git';
-const TEMP_DIR = path.join(__dirname, '../.tmp-spec');
 const DOCS_DIR = path.join(__dirname, '../docs');
+
+// Try to find the specification directory
+// In local development: ../OpenWorkflow-Specification
+// In GitHub Actions: ../OpenWorkflow-Specification (checked out separately)
+const LOCAL_SPEC_DIR = path.join(__dirname, '../../OpenWorkflow-Specification');
+const TEMP_SPEC_DIR = path.join(__dirname, '../.tmp-spec');
 
 interface FrontMatter {
   id?: string;
@@ -17,26 +22,35 @@ interface FrontMatter {
   description?: string;
 }
 
-async function cloneOrPullSpec() {
-  console.log('📥 Fetching latest specification...');
+async function getSpecDirectory(): Promise<string> {
+  // First, check if the local specification directory exists
+  if (await fs.pathExists(LOCAL_SPEC_DIR)) {
+    console.log('📥 Using local OpenWorkflow-Specification directory');
+    return LOCAL_SPEC_DIR;
+  }
 
-  if (await fs.pathExists(TEMP_DIR)) {
+  // Fall back to cloning into temp directory
+  console.log('📥 Fetching specification from GitHub...');
+
+  if (await fs.pathExists(TEMP_SPEC_DIR)) {
     // Pull latest changes
-    const git = simpleGit(TEMP_DIR);
+    const git = simpleGit(TEMP_SPEC_DIR);
     await git.pull();
     console.log('✅ Updated existing clone');
   } else {
     // Clone fresh
     const git = simpleGit();
-    await git.clone(SPEC_REPO, TEMP_DIR);
+    await git.clone(SPEC_REPO, TEMP_SPEC_DIR);
     console.log('✅ Cloned specification repository');
   }
+
+  return TEMP_SPEC_DIR;
 }
 
-async function syncSpecs() {
+async function syncSpecs(specDir: string) {
   console.log('\n📄 Syncing specification files...');
 
-  const sourceDir = path.join(TEMP_DIR, 'specs');
+  const sourceDir = path.join(specDir, 'specs');
   const targetDir = path.join(DOCS_DIR, 'reference');
 
   await fs.ensureDir(targetDir);
@@ -108,10 +122,10 @@ async function syncSpecs() {
   console.log(`✅ Synced ${mdFiles.length} specification files`);
 }
 
-async function syncExamples() {
+async function syncExamples(specDir: string) {
   console.log('\n📦 Syncing examples...');
 
-  const sourceDir = path.join(TEMP_DIR, 'examples');
+  const sourceDir = path.join(specDir, 'examples');
   const targetDir = path.join(DOCS_DIR, 'examples');
 
   await fs.ensureDir(targetDir);
@@ -137,13 +151,13 @@ async function syncExamples() {
   console.log('✅ Synced examples directory');
 }
 
-async function syncRootDocs() {
+async function syncRootDocs(specDir: string) {
   console.log('\n📝 Syncing root documentation...');
 
   const filesToSync = ['README.md', 'CONTRIBUTING.md', 'CHANGELOG.md'];
 
   for (const file of filesToSync) {
-    const sourcePath = path.join(TEMP_DIR, file);
+    const sourcePath = path.join(specDir, file);
 
     if (!(await fs.pathExists(sourcePath))) {
       console.log(`  ⊘ ${file} not found, skipping`);
@@ -275,10 +289,10 @@ async function main() {
   try {
     console.log('🚀 Starting OpenWorkflow specification sync\n');
 
-    await cloneOrPullSpec();
-    await syncSpecs();
-    await syncExamples();
-    await syncRootDocs();
+    const specDir = await getSpecDirectory();
+    await syncSpecs(specDir);
+    await syncExamples(specDir);
+    await syncRootDocs(specDir);
     await createReferenceIndex();
 
     console.log('\n✨ Sync completed successfully!\n');
