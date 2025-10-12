@@ -9,9 +9,10 @@ const SPEC_REPO = 'https://github.com/Open-Workflow/OpenWorkflow-Specification.g
 const DOCS_DIR = path.join(__dirname, '../docs');
 
 // Try to find the specification directory
-// In local development: ../OpenWorkflow-Specification
-// In GitHub Actions: ../OpenWorkflow-Specification (checked out separately)
+// In local development: ../../OpenWorkflow-Specification (sibling directory)
+// In GitHub Actions: .spec-source (checked out by workflow)
 const LOCAL_SPEC_DIR = path.join(__dirname, '../../OpenWorkflow-Specification');
+const GITHUB_ACTIONS_SPEC_DIR = path.join(__dirname, '../.spec-source');
 const TEMP_SPEC_DIR = path.join(__dirname, '../.tmp-spec');
 
 interface FrontMatter {
@@ -23,7 +24,13 @@ interface FrontMatter {
 }
 
 async function getSpecDirectory(): Promise<string> {
-  // First, check if the local specification directory exists
+  // First, check if GitHub Actions checked out the spec (highest priority for CI)
+  if (await fs.pathExists(GITHUB_ACTIONS_SPEC_DIR)) {
+    console.log('📥 Using GitHub Actions checked-out specification (.spec-source)');
+    return GITHUB_ACTIONS_SPEC_DIR;
+  }
+
+  // Second, check if the local specification directory exists (for local dev)
   if (await fs.pathExists(LOCAL_SPEC_DIR)) {
     console.log('📥 Using local OpenWorkflow-Specification directory');
     return LOCAL_SPEC_DIR;
