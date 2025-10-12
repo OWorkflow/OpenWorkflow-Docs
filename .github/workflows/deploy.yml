@@ -22,7 +22,14 @@ jobs:
     name: Build Docusaurus
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout docs repository
+        uses: actions/checkout@v4
+
+      - name: Checkout specification repository
+        uses: actions/checkout@v4
+        with:
+          repository: Open-Workflow/OpenWorkflow-Specification
+          path: ../OpenWorkflow-Specification
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

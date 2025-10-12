@@ -38,10 +38,14 @@ async function getSpecDirectory(): Promise<string> {
     await git.pull();
     console.log('✅ Updated existing clone');
   } else {
-    // Clone fresh
+    // Clone fresh with full depth to ensure all files are present
     const git = simpleGit();
-    await git.clone(SPEC_REPO, TEMP_SPEC_DIR);
+    await git.clone(SPEC_REPO, TEMP_SPEC_DIR, ['--depth', '1']);
     console.log('✅ Cloned specification repository');
+
+    // Verify the clone succeeded
+    const clonedContents = await fs.readdir(TEMP_SPEC_DIR);
+    console.log(`📁 Cloned contents: ${clonedContents.join(', ')}`);
   }
 
   return TEMP_SPEC_DIR;
@@ -54,6 +58,15 @@ async function syncSpecs(specDir: string) {
   const targetDir = path.join(DOCS_DIR, 'reference');
 
   await fs.ensureDir(targetDir);
+
+  // Check if specs directory exists
+  if (!(await fs.pathExists(sourceDir))) {
+    console.error(`❌ Specs directory not found at: ${sourceDir}`);
+    console.log('📁 Available contents in spec directory:');
+    const contents = await fs.readdir(specDir);
+    console.log(contents.join(', '));
+    throw new Error(`Specs directory not found: ${sourceDir}`);
+  }
 
   const files = await fs.readdir(sourceDir);
   const mdFiles = files.filter(f => f.endsWith('.md'));
@@ -109,7 +122,7 @@ async function syncSpecs(specDir: string) {
     // Escape < and > characters in tables that could be mistaken for JSX
     processedContent = processedContent.replace(
       /\|([^|]*)<([^|]*)\|/g,
-      (match, before, after) => `|${before}&lt;${after}|`
+      (_match, before, after) => `|${before}&lt;${after}|`
     );
 
     // Rebuild with front-matter
