@@ -55,6 +55,6 @@ jobs:
             --verbose
             --no-progress
             --exclude-path ./node_modules
-            --exclude-mail
+            --exclude 'mailto:'
             './build/**/*.html'
           fail: true
