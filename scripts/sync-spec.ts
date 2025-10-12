@@ -5,10 +5,7 @@ import fs from 'fs-extra';
 import path from 'path';
 import matter from 'gray-matter';
 
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
-const SPEC_REPO = GITHUB_TOKEN
-  ? `https://x-access-token:${GITHUB_TOKEN}@github.com/Open-Workflow/OpenWorkflow-Specification.git`
-  : 'https://github.com/Open-Workflow/OpenWorkflow-Specification.git';
+const SPEC_REPO = 'https://github.com/Open-Workflow/OpenWorkflow-Specification.git';
 const TEMP_DIR = path.join(__dirname, '../.tmp-spec');
 const DOCS_DIR = path.join(__dirname, '../docs');
 
