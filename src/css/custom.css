@@ -46,22 +46,6 @@
   letter-spacing: -0.01em;
 }
 
-/* Bold "Open" part using CSS trick */
-.navbar__title::before {
-  content: 'Open';
-  font-weight: 700;
-  position: absolute;
-  left: 0;
-  width: 2.8em;
-}
-
-/* Hide first 4 chars to show only our styled version */
-.navbar__title {
-  text-indent: 0;
-  position: relative;
-  padding-left: 2.8em;
-}
-
 /* Hero title with OpenWorkflow branding */
 .hero__title {
   font-family: 'Playfair Display', Georgia, serif;

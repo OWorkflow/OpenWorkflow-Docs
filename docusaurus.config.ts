@@ -68,7 +68,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'OpenWorkflow',
+      title: '',
       logo: {
         alt: 'OpenWorkflow Logo',
         src: 'img/logo-icon.png',

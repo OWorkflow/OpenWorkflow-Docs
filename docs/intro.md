@@ -275,4 +275,4 @@ This specification is released under the Apache 2.0 License. See [LICENSE](./LIC
 
 ---
 
-**Questions?** Join our [Discord](https://discord.gg/9ZvPRbps) or [GitHub Discussions](https://github.com/orgs/OWorkflow/discussions)
+**Questions?** Join our community at [community.openworkflowspec.org](https://community.openworkflowspec.org)
