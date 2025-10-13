@@ -131,7 +131,7 @@ docker run -d -p 8000:8000 \
 kubectl apply -f k8s/deployment.yaml
 ```
 
-### OpenWorkflow Cloud
+### Smartify Cloud
 
 ```bash
 # Publish to registry

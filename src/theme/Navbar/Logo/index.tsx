@@ -13,7 +13,7 @@ export default function LogoWrapper(props: Props): JSX.Element {
         fontFamily: "'Playfair Display', Georgia, serif",
         fontSize: '1.3rem',
         letterSpacing: '-0.01em',
-        marginLeft: '0.5rem',
+        marginLeft: '0.75rem',
       }}>
         <strong style={{fontWeight: 700}}>Open</strong>
         <span style={{fontWeight: 400}}>Workflow</span>
