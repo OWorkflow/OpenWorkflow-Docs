@@ -71,7 +71,8 @@ const config: Config = {
       title: 'OpenWorkflow',
       logo: {
         alt: 'OpenWorkflow Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo-light.png',
+        srcDark: 'img/logo-dark.png',
       },
       items: [
         {
