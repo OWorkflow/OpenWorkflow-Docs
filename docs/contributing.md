@@ -43,7 +43,7 @@ Thank you for your interest in contributing to the OpenWorkflow Open Specificati
 
 1. **Fork the repository**
    ```bash
-   git clone https://github.com/OWorkflow/OpenWorkflow-Specification.git
+   git clone https://github.com/Open-Workflow/OpenWorkflow-Specification.git
    cd OpenWorkflow-Specification
    ```
 
@@ -290,7 +290,7 @@ Contributors will be:
 ## Questions?
 
 - Read the [FAQ](https://github.com/OWorkflow/OpenWorkflow-Specification/blob/main/FAQ.md)
-- Ask in [Discussions](https://github.com/OWorkflow/OpenWorkflow-Specification/discussions)
+- Ask in [Discussions](https://github.com/Open-Workflow/OpenWorkflow-Specification/discussions)
 - Join our [Discord](https://community.openworkflowspec.org)
 
 Thank you for contributing to OpenWorkflow! 🚀

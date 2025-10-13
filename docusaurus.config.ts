@@ -121,8 +121,12 @@ const config: Config = {
           title: 'Community',
           items: [
             {
+              label: 'Discord',
+              href: 'https://discord.gg/9ZvPRbps',
+            },
+            {
               label: 'GitHub Discussions',
-              href: 'https://github.com/OWorkflow/OpenWorkflow-Specification/discussions',
+              href: 'https://github.com/orgs/OWorkflow/discussions',
             },
             {
               label: 'GitHub Issues',

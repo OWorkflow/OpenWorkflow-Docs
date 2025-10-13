@@ -4,6 +4,9 @@
  * work well for content-centric websites.
  */
 
+/* Import Recoleta font from Google Fonts (using Playfair Display as fallback) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #36b6ff;
@@ -33,4 +36,40 @@
 .hero--primary {
   --ifm-hero-background-color: #0d86db;
   --ifm-hero-text-color: #ffffff;
+}
+
+/* OpenWorkflow brand typography with Recoleta-style font (Playfair Display fallback) */
+.navbar__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+}
+
+/* Bold "Open" part using CSS trick */
+.navbar__title::before {
+  content: 'Open';
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+  width: 2.8em;
+}
+
+/* Hide first 4 chars to show only our styled version */
+.navbar__title {
+  text-indent: 0;
+  position: relative;
+  padding-left: 2.8em;
+}
+
+/* Hero title with OpenWorkflow branding */
+.hero__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+}
+
+/* Article/page titles */
+article h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
 }
