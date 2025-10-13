@@ -7,7 +7,7 @@ type Props = WrapperProps<typeof LogoType>;
 
 export default function LogoWrapper(props: Props): JSX.Element {
   return (
-    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+    <div style={{display: 'flex', alignItems: 'center', gap: '0.1rem'}}>
       <Logo {...props} />
       <b className="navbar__title navbar__brand-text" style={{
         fontFamily: "'Playfair Display', Georgia, serif",
