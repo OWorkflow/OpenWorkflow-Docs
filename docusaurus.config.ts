@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'OpenWorkflow Docs',
   tagline: 'Open standard for portable AI workflows and automations',
-  favicon: 'img/logo-icon.png',
+  favicon: 'img/favicon.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
