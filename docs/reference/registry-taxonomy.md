@@ -327,13 +327,13 @@ All manifests include a `schemaVersion` field for evolution:
     }
   },
 
-  "nodes": [
+  "steps": [
     {
       "id": "get_weather",
       "type": "action",
       "connector": "connector:community/weather@0.3.2",
       "action": "getWeather",
-      "with": {
+      "input": {
         "city": "{{ inputs.city }}"
       }
     },
@@ -342,16 +342,16 @@ All manifests include a `schemaVersion` field for evolution:
       "type": "action",
       "connector": "connector:community/slack@1.2.0",
       "action": "sendMessage",
-      "with": {
+      "input": {
         "channel": "{{ inputs.channel }}",
-        "text": "Today in {{ inputs.city }}: {{ nodes.get_weather.output.temp }}°F, {{ nodes.get_weather.output.conditions }}"
+        "text": "Today in {{ inputs.city }}: {{ steps.get_weather.output.temp }}°F, {{ steps.get_weather.output.conditions }}"
       }
     }
   ],
 
   "outputs": {
     "message_id": {
-      "value": "{{ nodes.post_slack.output.ts }}"
+      "value": "{{ steps.post_slack.output.ts }}"
     }
   },
 

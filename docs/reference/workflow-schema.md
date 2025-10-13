@@ -23,7 +23,7 @@ Workflows support three primary step categories:
 2. **Agent Steps**: Invoke AI agents (with optional backend override)
 3. **Logic Steps**: Control flow, branching, loops, transforms
 
-For detailed logic step semantics and the portable node catalog, see [Workflow Logic Nodes](./workflow-logic-nodes.md).
+For detailed logic step semantics and the portable node catalog, see [Workflow Logic Steps](./workflow-logic-steps.md).
 
 ### Backend Overrides
 

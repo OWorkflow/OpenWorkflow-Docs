@@ -64,7 +64,7 @@ For the Smartify Runtime implementation, see: *(link to be added when repository
 This specification defines:
 
 - **Schemas** for connectors, agents, workflows, and bundles
-- **Logic step catalog** with portable semantics (conditionals, loops, error handling, transforms)
+- **Logic node catalog** with portable semantics (conditionals, loops, error handling, transforms)
 - **Naming and versioning** conventions for registry resources
 - **Security primitives** (authentication, authorization, secrets management, template sandboxing)
 - **Registry protocol** for discovery, publishing, and dependency resolution
@@ -271,7 +271,7 @@ See [CONTRIBUTING.md](./contributing) for guidelines.
 
 ## License
 
-This specification is released under the MIT License. See [LICENSE](./LICENSE) for details.
+This specification is released under the Apache 2.0 License. See [LICENSE](./LICENSE) for details.
 
 ---
 

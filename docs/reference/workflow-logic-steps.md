@@ -748,7 +748,7 @@ workflows:
 
 ### Operators
 
-- **Comparison**: `>`, `<`, `>=`, `<=`, `==`, `!=`
+- **Comparison**: `>`, `<`, `>=`, `&lt;=`, `==`, `!=`
 - **Logical**: `&&`, `||`, `!`
 - **Arithmetic**: `+`, `-`, `*`, `/`, `%`
 - **String**: `+` (concatenation)

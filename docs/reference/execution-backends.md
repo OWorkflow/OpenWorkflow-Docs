@@ -137,9 +137,9 @@ Agents declare their execution backend in the manifest:
 
 **Default behavior:** If `execution` is omitted, defaults to `native` backend.
 
-### Workflow Node Override
+### Workflow Step Override
 
-Workflows can override execution backend per-node:
+Workflows can override execution backend per-step:
 
 ```json
 {
@@ -150,7 +150,7 @@ Workflows can override execution backend per-node:
   "workflows": [
     {
       "name": "Mixed Backend Example",
-      "nodes": [
+      "steps": [
         {
           "id": "fetch_data",
           "type": "action",
@@ -169,7 +169,7 @@ Workflows can override execution backend per-node:
             "runtime": "python"
           },
           "with": {
-            "data": "{{ nodes.fetch_data.output }}"
+            "data": "{{ steps.fetch_data.output }}"
           }
         },
         {
@@ -189,22 +189,22 @@ Workflows can override execution backend per-node:
 
 ## Backend Resolution Priority
 
-When executing a node, backend is resolved in this order:
+When executing a step, backend is resolved in this order:
 
-1. **Node-level `execution` field** (highest priority)
+1. **Step-level `execution` field** (highest priority)
 2. **Referenced agent's `execution` field**
 3. **Global default** (`native`)
 
 ### Resolution Examples
 
 ```json
-// Example 1: Node overrides agent
+// Example 1: Step overrides agent
 {
   "id": "analyze",
   "type": "agent",
   "agent": "agent:acme/analyzer@1.0.0",  // Agent specifies "native"
   "execution": {
-    "backend": "langchain"  // Node override wins → uses langchain
+    "backend": "langchain"  // Step override wins → uses langchain
   }
 }
 
@@ -213,7 +213,7 @@ When executing a node, backend is resolved in this order:
   "id": "process",
   "type": "agent",
   "agent": "agent:acme/processor@1.0.0"  // Agent specifies "langchain"
-  // No node override → uses langchain
+  // No step override → uses langchain
 }
 
 // Example 3: Global default
@@ -221,7 +221,7 @@ When executing a node, backend is resolved in this order:
   "id": "transform",
   "type": "action",
   "connector": "connector:community/transform@1.0.0"
-  // No agent, no node override → uses native
+  // No agent, no step override → uses native
 }
 ```
 
@@ -560,9 +560,9 @@ Validators must enforce:
    - Compatibility ranges must be valid semver
    - SDK warns on version mismatches
 
-4. **Node override safety**
-   - Node can override agent backend
-   - Node can specify backend for actions (defaults to native)
+4. **Step override safety**
+   - Step can override agent backend
+   - Step can specify backend for actions (defaults to native)
 
 5. **Capabilities are descriptive**
    - Connector capabilities don't affect execution
@@ -597,7 +597,7 @@ Backends are reflected in registry badges:
 
 ```json
 {
-  "nodes": [
+  "steps": [
     {
       "id": "fast_lookup",
       "execution": {"backend": "native"}  // Fast, deterministic
@@ -641,7 +641,7 @@ assert_similar_outputs(native_result, langchain_result)
 
 Required conformance tests:
 
-1. ✅ Backend resolution priority (node > agent > default)
+1. ✅ Backend resolution priority (step > agent > default)
 2. ✅ Output parity between native and LangChain
 3. ✅ Connector to tool translation accuracy
 4. ✅ Timeout and cancellation handling

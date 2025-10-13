@@ -293,4 +293,4 @@ Contributors will be:
 - Ask in [Discussions](https://github.com/Open-Workflow/OpenWorkflow-Specification/discussions)
 - Join our [Discord](https://community.openworkflowspec.org)
 
-Thank you for contributing to Smartify! 🚀
+Thank you for contributing to OpenWorkflow! 🚀
