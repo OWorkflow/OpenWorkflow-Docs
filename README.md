@@ -1,12 +1,12 @@
 # OpenWorkflow Documentation
 
-This repository contains the documentation website for [OpenWorkflow](https://github.com/Open-Workflow/OpenWorkflow-Specification), built with [Docusaurus v3](https://docusaurus.io/).
+This repository contains the documentation website for [OpenWorkflow](https://github.com/OWorkflow/OpenWorkflow-Specification), built with [Docusaurus v3](https://docusaurus.io/).
 
 **Live site:** [https://docs.openworkflowspec.org](https://docs.openworkflowspec.org)
 
 ## Overview
 
-The OpenWorkflow documentation site automatically syncs content from the [OpenWorkflow-Specification](https://github.com/Open-Workflow/OpenWorkflow-Specification) repository, including:
+The OpenWorkflow documentation site automatically syncs content from the [OpenWorkflow-Specification](https://github.com/OWorkflow/OpenWorkflow-Specification) repository, including:
 
 - Specification files from `/specs/`
 - Examples from `/examples/`
@@ -140,7 +140,7 @@ npm run docusaurus docs:version 0.2.0
 
 Contributions to the documentation site structure and tooling are welcome!
 
-For content changes (specifications, examples), contribute to the [OpenWorkflow-Specification](https://github.com/Open-Workflow/OpenWorkflow-Specification) repository instead.
+For content changes (specifications, examples), contribute to the [OpenWorkflow-Specification](https://github.com/OWorkflow/OpenWorkflow-Specification) repository instead.
 
 ## License
 

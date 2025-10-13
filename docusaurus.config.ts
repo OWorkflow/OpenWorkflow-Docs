@@ -22,7 +22,7 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Open-Workflow', // Usually your GitHub org/user name.
+  organizationName: 'OWorkflow', // Usually your GitHub org/user name.
   projectName: 'OpenWorkflow-Docs', // Usually your repo name.
 
   onBrokenLinks: 'warn', // Changed from 'throw' since some spec files reference planned-but-not-yet-created files
@@ -43,7 +43,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Edit links point to the OpenWorkflow-Specification repo
           editUrl:
-            'https://github.com/Open-Workflow/OpenWorkflow-Specification/tree/main/',
+            'https://github.com/OWorkflow/OpenWorkflow-Specification/tree/main/',
           // Versioning configuration
           lastVersion: 'current',
           versions: {
@@ -86,12 +86,12 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/Open-Workflow/OpenWorkflow-Specification',
+          href: 'https://github.com/OWorkflow/OpenWorkflow-Specification',
           label: 'Specification',
           position: 'right',
         },
         {
-          href: 'https://github.com/Open-Workflow',
+          href: 'https://github.com/OWorkflow',
           label: 'GitHub',
           position: 'right',
         },
@@ -122,11 +122,11 @@ const config: Config = {
           items: [
             {
               label: 'GitHub Discussions',
-              href: 'https://github.com/Open-Workflow/OpenWorkflow-Specification/discussions',
+              href: 'https://github.com/OWorkflow/OpenWorkflow-Specification/discussions',
             },
             {
               label: 'GitHub Issues',
-              href: 'https://github.com/Open-Workflow/OpenWorkflow-Specification/issues',
+              href: 'https://github.com/OWorkflow/OpenWorkflow-Specification/issues',
             },
           ],
         },
@@ -135,11 +135,11 @@ const config: Config = {
           items: [
             {
               label: 'Specification Repository',
-              href: 'https://github.com/Open-Workflow/OpenWorkflow-Specification',
+              href: 'https://github.com/OWorkflow/OpenWorkflow-Specification',
             },
             {
               label: 'OpenWorkflow Organization',
-              href: 'https://github.com/Open-Workflow',
+              href: 'https://github.com/OWorkflow',
             },
           ],
         },

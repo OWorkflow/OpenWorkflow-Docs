@@ -28,7 +28,7 @@ jobs:
       - name: Checkout specification repository
         uses: actions/checkout@v4
         with:
-          repository: Open-Workflow/OpenWorkflow-Specification
+          repository: OWorkflow/OpenWorkflow-Specification
           path: .spec-source
 
       - name: Setup Node.js

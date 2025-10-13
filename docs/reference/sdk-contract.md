@@ -73,7 +73,7 @@ await openworkflow.registerConnector(connectorConfig);
 
 **Go:**
 ```go
-import "github.com/Open-Workflow/sdk-go"
+import "github.com/OWorkflow/sdk-go"
 
 s := openworkflow.New()
 err := s.RegisterConnector("./connectors/weather.yaml")
@@ -587,9 +587,9 @@ All language implementations must support:
 
 ## Reference Implementations
 
-- **Python**: [smartify-sdk-python](https://github.com/Open-Workflow/sdk-python)
-- **JavaScript**: [@openworkflow/sdk](https://github.com/Open-Workflow/sdk-js)
-- **Go**: [openworkflow/sdk-go](https://github.com/Open-Workflow/sdk-go)
+- **Python**: [smartify-sdk-python](https://github.com/OWorkflow/sdk-python)
+- **JavaScript**: [@openworkflow/sdk](https://github.com/OWorkflow/sdk-js)
+- **Go**: [openworkflow/sdk-go](https://github.com/OWorkflow/sdk-go)
 
 ## Next Steps
 

@@ -5,7 +5,7 @@ import fs from 'fs-extra';
 import path from 'path';
 import matter from 'gray-matter';
 
-const SPEC_REPO = 'https://github.com/Open-Workflow/OpenWorkflow-Specification.git';
+const SPEC_REPO = 'https://github.com/OWorkflow/OpenWorkflow-Specification.git';
 const DOCS_DIR = path.join(__dirname, '../docs');
 
 // Try to find the specification directory
@@ -251,11 +251,11 @@ async function syncRootDocs(specDir: string) {
     );
     processedContent = processedContent.replace(
       /\]\(\.\/SECURITY-REVIEW\.md\)/g,
-      '](https://github.com/Open-Workflow/OpenWorkflow-Specification/blob/main/SECURITY-REVIEW.md)'
+      '](https://github.com/OWorkflow/OpenWorkflow-Specification/blob/main/SECURITY-REVIEW.md)'
     );
     processedContent = processedContent.replace(
       /\]\(\.\/FAQ\.md\)/g,
-      '](https://github.com/Open-Workflow/OpenWorkflow-Specification/blob/main/FAQ.md)'
+      '](https://github.com/OWorkflow/OpenWorkflow-Specification/blob/main/FAQ.md)'
     );
 
     const output = matter.stringify(processedContent, frontMatter);
@@ -297,7 +297,7 @@ Browse the specification documentation:
 
 ## License
 
-The OpenWorkflow specification is licensed under [Apache 2.0](https://github.com/Open-Workflow/OpenWorkflow-Specification/blob/main/LICENSE).
+The OpenWorkflow specification is licensed under [Apache 2.0](https://github.com/OWorkflow/OpenWorkflow-Specification/blob/main/LICENSE).
 `;
 
   const frontMatter: FrontMatter = {

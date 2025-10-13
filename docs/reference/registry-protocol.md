@@ -88,7 +88,7 @@ curl "https://registry.openworkflowspec.org/plugins/github?version=1.2.0"
   "description": "Interact with GitHub repositories, issues, and pull requests",
   "author": "OpenWorkflow Community",
   "homepage": "https://docs.openworkflowspec.org/plugins/github",
-  "repository": "https://github.com/Open-Workflow/connector-github",
+  "repository": "https://github.com/OWorkflow/connector-github",
   "license": "MIT",
   "tags": ["vcs", "github", "git", "development"],
   "actions": [

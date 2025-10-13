@@ -8,7 +8,7 @@ connector:
   description: Get current weather conditions and forecasts for any location using Open-Meteo API
   author: OpenWorkflow Community
   homepage: https://docs.openworkflowspec.org/connectors/weather
-  repository: https://github.com/Open-Workflow/connector-weather
+  repository: https://github.com/OWorkflow/connector-weather
   license: MIT
   categories: [weather, forecast, api]
 

@@ -27,7 +27,7 @@ This is a pre-release specification. Production deployments should implement add
 - **Access control (RBAC)** - Workflow and connector permissions
 - **Connector signature verification** - Supply chain security
 
-See [SECURITY-REVIEW.md](https://github.com/Open-Workflow/OpenWorkflow-Specification/blob/main/SECURITY-REVIEW.md) for comprehensive security analysis and recommendations.
+See [SECURITY-REVIEW.md](https://github.com/OWorkflow/OpenWorkflow-Specification/blob/main/SECURITY-REVIEW.md) for comprehensive security analysis and recommendations.
 
 ## Vision
 

@@ -31,4 +31,4 @@ Browse the specification documentation:
 
 ## License
 
-The OpenWorkflow specification is licensed under [Apache 2.0](https://github.com/Open-Workflow/OpenWorkflow-Specification/blob/main/LICENSE).
+The OpenWorkflow specification is licensed under [Apache 2.0](https://github.com/OWorkflow/OpenWorkflow-Specification/blob/main/LICENSE).
