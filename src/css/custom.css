@@ -46,6 +46,13 @@
   letter-spacing: -0.01em;
 }
 
+/* Remove padding from navbar logo for better alignment */
+.navbar__logo img {
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
 /* Hero title with OpenWorkflow branding */
 .hero__title {
   font-family: 'Playfair Display', Georgia, serif;
