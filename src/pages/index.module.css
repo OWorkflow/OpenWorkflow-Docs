@@ -16,8 +16,18 @@
   }
 }
 
+.heroDescription {
+  font-size: 1.1rem;
+  margin: 1.5rem auto 2rem;
+  max-width: 800px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }

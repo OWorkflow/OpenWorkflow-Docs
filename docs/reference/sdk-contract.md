@@ -164,7 +164,7 @@ const results = await workflows.executeAll();
 
 ### 4. Cloud Integration
 
-Register with Smartify Cloud for managed execution:
+Register with OpenWorkflow Cloud for managed execution:
 
 **Python:**
 ```python
@@ -198,7 +198,7 @@ const result = await workflow.execute({ mode: 'cloud' });
 
 ```python
 openworkflow = OpenWorkflow(
-    api_key="sk_...",              # Optional: Smartify Cloud API key
+    api_key="sk_...",              # Optional: OpenWorkflow Cloud API key
     router_url="http://...",       # Optional: Custom MCP Router URL
     execution_mode="local",        # "local", "cloud", or "hybrid"
     timeout=300,                   # Default timeout for actions
@@ -236,11 +236,11 @@ result = workflow.execute()  # Runs in-process
 
 ### Cloud Execution
 
-Actions execute in Smartify Cloud:
+Actions execute in OpenWorkflow Cloud:
 
 ```python
 openworkflow = OpenWorkflow(api_key="sk_...", execution_mode="cloud")
-result = workflow.execute()  # Runs in Smartify Cloud
+result = workflow.execute()  # Runs in OpenWorkflow Cloud
 ```
 
 **Requirements:**

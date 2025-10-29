@@ -301,7 +301,7 @@ await workflow.execute({ autoInstall: true });
 
 ## MCP Router Registration
 
-When running self-hosted or in Smartify Cloud, plugins register with the MCP Router for dynamic routing.
+When running self-hosted or in OpenWorkflow Cloud, plugins register with the MCP Router for dynamic routing.
 
 ### Registration
 

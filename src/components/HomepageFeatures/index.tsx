@@ -11,32 +11,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Universal',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Works across frameworks, languages, and runtimes — no lock-in.
+        Define your workflows once and execute them anywhere, from LangChain to Smartify to custom runtimes.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Composable',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Define triggers, actions, and logic in a single declarative schema.
+        Build complex automations by combining connectors, agents, and control flow in human-readable YAML.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Transparent',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Human-readable YAML format with no hidden code or runtime magic.
+        Every workflow is self-documenting, versionable, and auditable.
       </>
     ),
   },
